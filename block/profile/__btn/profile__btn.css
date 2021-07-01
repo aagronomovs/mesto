@@ -1,0 +1,10 @@
+.profile__btn {
+    margin: 0;
+}
+
+
+@media screen and (min-width: 1280px) {
+    .profile__btn {
+        margin-left: auto;
+    }
+}

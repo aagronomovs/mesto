@@ -1,0 +1,18 @@
+.cards {
+  margin: 36px auto 48px;
+  padding: 0;
+  background-color: black;
+}
+
+@media screen and (min-width: 1280px) {
+  .cards {
+    margin-top: 51px;
+    margin-bottom: 67px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 17px;
+    row-gap: 20px;
+    max-width: 880px;
+  }
+}

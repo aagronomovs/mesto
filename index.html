@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mesto</title>
+  <link rel="stylesheet" href="./page/index.css">
+</head>
+
+<body>
+  <div class="root">
+    <header class="header">
+      <img class="logo" src="./image/logo.svg" alt="Логотип">
+      <hr class="header__line">
+      </hr>
+    </header>
+
+    <main class="content">
+      <section class="profile">
+        <div class="profile__foto">
+        <img class="profile__avatar" src="./image/kusto.jpg" alt="Аватар профиля">
+      </div>
+        <div class="profile__info">
+          <h1 class="profile__title">Жак-Ив Кусто</h1>
+          <button class="button button__edit"></button>
+          <p class="profile__text">Исследователь океана</p>
+        </div>
+        <div class="profile__btn">
+          <button class="button button__add"><img src="./image/Add_button.svg" alt="Добавить"></button>
+        </div>
+        
+      </section>
+
+      <section class="cards">
+        <div class="cards__container">
+          <img class="cards__photo" alt="Карачаево-Черкессия фото" src="./image/karachaevo-ch.jpg">
+          <div class="wrapper">
+          <h2 class="cards__title">Карачаево-Черкессия</h2>
+          <button class="button button__like"></button>
+        </div>
+        </div>
+
+        <div class="cards__container">
+          <img class="cards__photo" alt="Карачаево-Черкессия фото" src="./image/karachaevo-ch.jpg">
+          <div class="wrapper">
+          <h2 class="cards__title">Карачаево-Черкессия</h2>
+          <button class="button button__like"></button>
+          </div>
+        </div>
+
+        <div class="cards__container">
+          <img class="cards__photo" alt="Гора Эльбрус фото" src="./image/elbrus.jpg">
+          <div class="wrapper">
+          <h2 class="cards__title">Гора Эльбрус</h2>
+          <button class="button button__like"></button>
+          </div>
+        </div>
+
+        <div class="cards__container">
+          <img class="cards__photo" alt="Домбай фото" src="./image/dombay.jpg">
+          <div class="wrapper">
+          <h2 class="cards__title">Домбай</h2>
+          <button class="button button__like"></button>
+          </div>
+        </div>
+
+        <div class="cards__container">
+          <img class="cards__photo" alt="Карачаево-Черкессия фото" src="./image/karachaevo-ch.jpg">
+          <div class="wrapper">
+          <h2 class="cards__title">Карачаево-Черкессия</h2>
+          <button class="button button__like"></button>
+          </div>
+        </div>
+
+        <div class="cards__container">
+          <img class="cards__photo" alt="Карачаево-Черкессия фото" src="./image/karachaevo-ch.jpg">
+          <div class="wrapper">
+          <h2 class="cards__title">Карачаево-Черкессия</h2>
+          <button class="button button__like"></button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <footer class="footer">
+      <h2 class="footer__copyright">&copy; 2020 Mesto Russia</h2>
+    </footer>
+
+    <section class="popup">
+      <div class="popup__container">
+        <button class="button popup__close"></button>
+        <form class="popup__form">
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <input type="text" class="popup__input popup__input_bio" name="bio" required>
+        <input type="text" class="popup__input popup__input_job" name="job"  required>
+        <button type="submit" class="button popup__submit" name="submit" value="Сохранить">Сохранить</button>
+      </form>
+      </div>
+    </section>
+  </div>
+  <script src="scripts/script.js"></script>
+</body>
+
+</html>

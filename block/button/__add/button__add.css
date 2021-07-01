@@ -1,0 +1,25 @@
+.button__add {
+    width: 282px;
+    height: 50px;
+    background: transparent center;
+    box-sizing: border-box;
+    border: 2px solid white;
+    border-radius: 2px;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.button__add:hover {
+    opacity: 0.6;
+    cursor: pointer;
+    
+}
+
+@media screen and (min-width: 1280px) {
+    .button__add {
+        width: 150px;
+    }
+}

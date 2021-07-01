@@ -1,0 +1,27 @@
+.button__edit {
+    border: none;
+    background-size: cover;
+    width: 18px;
+    height: 18px;
+    background-image: url('../../../image/Edit_Button.svg');
+    background-color: #000;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.button__edit:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 1280px) {
+    .button__edit {
+        width: 24px;
+        height: 24px;
+        margin-left: 18px;
+        margin-top: 18px;
+    }
+}
