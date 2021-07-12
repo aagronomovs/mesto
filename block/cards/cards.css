@@ -4,7 +4,17 @@
   background-color: black;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) {
+  .cards {
+    max-width: 710px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 20px;
+  }
+}
+
+@media screen and (min-width: 900px) {
   .cards {
     margin-top: 51px;
     margin-bottom: 67px;

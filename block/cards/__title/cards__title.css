@@ -15,10 +15,3 @@
     min-width: 219px;
     text-align: left;
 }
-
-
-@media screen and (min-width: 1280px) {
-    .cards__title {
-
-    }
-}

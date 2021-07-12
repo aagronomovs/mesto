@@ -1,20 +1,29 @@
 .popup__input {
     border: 0;
     width: 100%;
-    min-width: 238px;
+    max-width: 238px;
     height: 27px;
     box-sizing: border-box;
-    border-bottom: 1px solid #000000;
-    opacity: 0.2;
-    background-color: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, .5);
     margin: 0 auto;
-    padding-bottom: 13px;
+    padding: 0;
+    background-color: white;
     font-size: 14px;
     font-family: inherit;
     color: #000000;
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) {
+    .popup__input {
+        max-width: 270px;
+    }
+}
+
+@media screen and (min-width: 900px) {
     .popup__input {
         max-width: 358px;
     }

@@ -1,15 +1,11 @@
 .popup__close {
     width: 20px;
     height: 20px;
+    border: none;
     background: center url("../../../image/Close_Icon.svg");
     background-size: auto;
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -ms-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s;
     position: absolute;
-    top: -30px;
+    top: -28px;
     right: 0;
 }
 

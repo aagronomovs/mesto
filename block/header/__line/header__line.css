@@ -11,7 +11,14 @@
 
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) {
+    .header__line {
+        min-width: 680px;
+    }
+}
+
+
+@media screen and (min-width: 900px) {
     .header__line {
         min-width: 880px;
     }
