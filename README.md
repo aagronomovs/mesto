@@ -16,4 +16,4 @@
 
 **Github-pages**
 
-Посмотреть проект можно по ссылке
+Посмотреть проект можно по ссылке https://aagronomovs.github.io/mesto/index.html
