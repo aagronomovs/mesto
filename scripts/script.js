@@ -1,7 +1,7 @@
 console.log('Hello world!')
 
 // Делаем выборку DOM элементов
-const popupOpenButtonElement = document.querySelector('.button__edit');
+const popupOpenButtonElement = document.querySelector('.button_edit');
 const popupElement = document.querySelector('.popup');
 const popupCloseButtonElement = popupElement.querySelector('.popup__close');
 
