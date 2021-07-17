@@ -17,5 +17,6 @@
 @media screen and (min-width: 768px) {
     .button_add {
         max-width: 150px;
+        background-image: url('../../../image/Add_button_size_l.svg');
     }
 }
