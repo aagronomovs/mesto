@@ -6,8 +6,13 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     box-sizing: border-box;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: visibility 0s linear .5s, opacity .5s linear;
+    -o-transition: visibility 0s linear .5s, opacity .5s linear;
+    transition: visibility 0s linear .5s, opacity .5s linear;
 }
