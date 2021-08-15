@@ -29,9 +29,9 @@
       <section class="cards">
 
       </section>
-        
 
-        
+
+
     </main>
     <footer class="footer">
       <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
@@ -48,7 +48,7 @@
       </article>
     </template>
 
-    <div class="popup">
+    <div class="popup popup_edit-profile">
       <div class="popup__container">
         <button class="popup__close" type="button"></button>
         <form name="userform" class="popup__form">
@@ -59,6 +59,31 @@
         </form>
       </div>
     </div>
+
+    <div class="popup popup_add-card">
+      <div class="popup__container">
+        <button class="popup__close popup__close_card" type="button"></button>
+        <form name="card" class="popup__form  popup__form_add-card">
+          <h2 class="popup__title">Новое место</h2>
+          <input type="text" class="popup__input popup__input_field_card-name" name="card-name" placeholder="Название"
+            >
+          <input type="text" class="popup__input popup__input_field_link" name="link" placeholder="Ссылка на картинку"
+            >
+          <button type="submit" class="button popup__submit popup__submit_add-card" name="submit" value="Создать">Создать</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup_zoom-image">
+      <div class="popup__big">
+        <button class="popup__close popup__close_image" type="button"></button>
+        <figure class="popup__figure">
+        <img class="popup__image-preview" alt="" src="">
+        <figcaption class="popup__image-title"></figcaption>
+        </figure>
+      </div>
+    </div>
+
   </div>
   <script src="scripts/script.js"></script>
 </body>
