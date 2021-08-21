@@ -26,6 +26,7 @@ const initialCards = [{
 ];
 
 // Делаем выборку DOM элементов
+const popup = document.querySelector(".popup");
 const popupEditButtonElement = document.querySelector(".button_edit");
 const popupEditProfile = document.querySelector(".popup_edit-profile");
 const popupCloseButtonProfileElement = popupEditProfile.querySelector(
@@ -71,6 +72,28 @@ function openPopup(popup) {
 // Функция закрытия попапов
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
+}
+
+//Функция закрытия попапов по оверлей
+const closePopupbyClickOnOverlay = function(evt) {
+  if (evt.target.classList.contains('popup')){
+    closePopup(popupEditProfile);
+
+    closePopup(popupAddNewCard);
+    
+    closePopup(popupZoomImage);
+  }
+}
+
+//Функция закрытия попапов по Escape
+const closePopupByEscape = function(evt) {
+  if (evt.key === "Escape"){
+    closePopup(popupEditProfile);
+
+    closePopup(popupAddNewCard);
+    
+    closePopup(popupZoomImage);
+  }
 }
 
 // Добавление карточки по темплейту
@@ -163,3 +186,5 @@ imageCloseButtonElement.addEventListener("click", function (evt) {
 });
 formEditProfileElement.addEventListener("submit", editFormSubmitHandler);
 formAddCardElement.addEventListener("submit", addFormSubmitHandler);
+document.addEventListener('click', closePopupbyClickOnOverlay);
+document.addEventListener('keydown', closePopupByEscape);
