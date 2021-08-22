@@ -27,6 +27,8 @@ const initialCards = [{
 
 // Делаем выборку DOM элементов
 const popup = document.querySelector(".popup");
+const formElement = document.querySelector('.popup__form');
+
 const popupEditButtonElement = document.querySelector(".button_edit");
 const popupEditProfile = document.querySelector(".popup_edit-profile");
 const popupCloseButtonProfileElement = popupEditProfile.querySelector(
@@ -58,6 +60,7 @@ const cardName = document.querySelector(".item__title");
 const cardLink = document.querySelector(".item__photo");
 const cardTemplate = document.querySelector("#template").content;
 const popupAddNewCard = document.querySelector(".popup_add-card");
+const popupSubmitButtonAddCard = document.querySelector(".popup__submit_add-card");
 
 const popupZoomImage = document.querySelector(".popup_zoom-image");
 const popupImagePreview = document.querySelector(".popup__image-preview");
@@ -75,23 +78,23 @@ function closePopup(popup) {
 }
 
 //Функция закрытия попапов по оверлей
-const closePopupbyClickOnOverlay = function(evt) {
-  if (evt.target.classList.contains('popup')){
+const closePopupbyClickOnOverlay = function (evt) {
+  if (evt.target.classList.contains('popup')) {
     closePopup(popupEditProfile);
 
     closePopup(popupAddNewCard);
-    
+
     closePopup(popupZoomImage);
   }
 }
 
 //Функция закрытия попапов по Escape
-const closePopupByEscape = function(evt) {
-  if (evt.key === "Escape"){
+const closePopupByEscape = function (evt) {
+  if (evt.key === "Escape") {
     closePopup(popupEditProfile);
 
     closePopup(popupAddNewCard);
-    
+
     closePopup(popupZoomImage);
   }
 }
@@ -172,6 +175,7 @@ function editFormSubmitHandler(evt) {
 // Открыть попап добавления карточки
 popupAddButtonElement.addEventListener("click", function (evt) {
   openPopup(popupAddNewCard);
+
 });
 
 // Закрыть попап добавления карточки
