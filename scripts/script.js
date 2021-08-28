@@ -4,6 +4,7 @@ const allPopups = document.querySelectorAll(".popup");
 const popupContainers = document.querySelectorAll(".popup__container");
 const formElement = document.querySelector(".popup__form");
 
+
 const popupEditButtonElement = document.querySelector(".button_edit");
 const popupEditProfile = document.querySelector(".popup_edit-profile");
 const popupCloseButtonProfileElement = popupEditProfile.querySelector(
@@ -36,6 +37,7 @@ const cardLink = document.querySelector(".item__photo");
 const cardTemplate = document.querySelector("#template").content;
 const popupAddNewCard = document.querySelector(".popup_add-card");
 const popupSubmitButtonAddCard = document.querySelector(".popup__submit_add-card");
+const popupSubmitButtonElement = popupAddNewCard.querySelector(".popup__submit");
 
 const popupZoomImage = document.querySelector(".popup_zoom-image");
 const popupImagePreview = document.querySelector(".popup__image-preview");
@@ -90,6 +92,7 @@ const closePopupByEscape = function (evt, popup) {
   }
 }
 
+
 // Добавление карточки по темплейту
 function createCard(item) {
   const cardElement = cardTemplate.querySelector(".item").cloneNode(true);
@@ -133,6 +136,13 @@ initialCards.forEach(function (item) {
   addCard(item);
 });
 
+
+//Функция отключения кнопки Submit при добавлении карточки
+function disableSubmitButtonWhenOpened(popupAddButtonElement) {
+  popupSubmitButtonElement.classList.add("popup__submit_disabled");
+  popupSubmitButtonElement.setAttribute("disabled", true);
+}
+
 // Обработчик submit формы добавления карты
 function addFormSubmitHandler(evt) {
   evt.preventDefault();
@@ -143,8 +153,8 @@ function addFormSubmitHandler(evt) {
   addCard(card);
   formAddCardElement.reset();
 
-  popupAddNewCard.querySelector(".popup__submit").classList.add("popup__submit_disabled");
-  popupAddNewCard.querySelector(".popup__submit").setAttribute("disabled", true);
+  // popupSubmitButtonElement.classList.add("popup__submit_disabled");
+  //popupSubmitButtonElement.setAttribute("disabled", true);
 
   closePopup(popupAddNewCard);
 }
@@ -185,4 +195,7 @@ imageCloseButtonElement.addEventListener("click", function (evt) {
 });
 formEditProfileElement.addEventListener("submit", editFormSubmitHandler);
 formAddCardElement.addEventListener("submit", addFormSubmitHandler);
-//formAddCardElement.addEventListener("input", addFormSubmitHandler);
+
+popupAddButtonElement.addEventListener("click", function (evt) {
+  disableSubmitButtonWhenOpened(popupAddNewCard);
+})
