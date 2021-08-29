@@ -3,6 +3,7 @@ const popup = document.querySelector(".popup");
 const allPopups = document.querySelectorAll(".popup");
 const popupContainers = document.querySelectorAll(".popup__container");
 const formElement = document.querySelector(".popup__form");
+const submitButton = document.querySelector(".popup__submit");
 
 
 const popupEditButtonElement = document.querySelector(".button_edit");
@@ -36,8 +37,9 @@ const cardName = document.querySelector(".item__title");
 const cardLink = document.querySelector(".item__photo");
 const cardTemplate = document.querySelector("#template").content;
 const popupAddNewCard = document.querySelector(".popup_add-card");
-const popupSubmitButtonAddCard = document.querySelector(".popup__submit_add-card");
-const popupSubmitButtonElement = popupAddNewCard.querySelector(".popup__submit");
+//const popupSubmitButtonAddCard = document.querySelector(".popup__submit_add-card");
+const submitButtonForAddCardPopup = popupAddNewCard.querySelector(".popup__submit");
+const submitButtonForEditProfilePopup = popupEditButtonElement.querySelector(".popup__submit");
 
 const popupZoomImage = document.querySelector(".popup_zoom-image");
 const popupImagePreview = document.querySelector(".popup__image-preview");
@@ -138,9 +140,10 @@ initialCards.forEach(function (item) {
 
 
 //Функция отключения кнопки Submit при добавлении карточки
-function disableSubmitButtonWhenOpened(popupAddButtonElement) {
-  popupSubmitButtonElement.classList.add("popup__submit_disabled");
-  popupSubmitButtonElement.setAttribute("disabled", true);
+function disableSubmitButton() {
+  
+  submitButton.classList.add("popup__submit_disabled");
+  submitButton.setAttribute("disabled", true);
 }
 
 // Обработчик submit формы добавления карты
@@ -152,7 +155,7 @@ function addFormSubmitHandler(evt) {
 
   addCard(card);
   formAddCardElement.reset();
-
+  disableSubmitButton(submitButtonForAddCardPopup);
   // popupSubmitButtonElement.classList.add("popup__submit_disabled");
   //popupSubmitButtonElement.setAttribute("disabled", true);
 
@@ -196,6 +199,6 @@ imageCloseButtonElement.addEventListener("click", function (evt) {
 formEditProfileElement.addEventListener("submit", editFormSubmitHandler);
 formAddCardElement.addEventListener("submit", addFormSubmitHandler);
 
-popupAddButtonElement.addEventListener("click", function (evt) {
-  disableSubmitButtonWhenOpened(popupAddNewCard);
-})
+//popupAddButtonElement.addEventListener("click", function (evt) {
+//  disableSubmitButtonWhenOpened(popupAddNewCard);
+//})
