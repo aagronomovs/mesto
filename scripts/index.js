@@ -1,3 +1,6 @@
+import { initialCards } from "./initial-cards.js";
+import Card  from "./card.js";
+
 // Делаем выборку DOM элементов
 const popup = document.querySelector(".popup");
 const allPopups = document.querySelectorAll(".popup");
@@ -96,47 +99,60 @@ const closePopupByEscape = function (evt, popup) {
 
 
 // Добавление карточки по темплейту
-function createCard(item) {
-  const cardElement = cardTemplate.querySelector(".item").cloneNode(true);
-  const cardElementPhoto = cardElement.querySelector(".item__photo");
+//function createCard(item) {
+//  const cardElement = cardTemplate.querySelector(".item").cloneNode(true);
+//  const cardElementPhoto = cardElement.querySelector(".item__photo");
 
-  cardElement
-    .querySelector(".button_like")
-    .addEventListener("click", function (evt) {
-      evt.target.classList.toggle("button_like_active");
-    });
+  //cardElement
+    //.querySelector(".button_like")
+    //.addEventListener("click", function (evt) {
+    //  evt.target.classList.toggle("button_like_active");
+    //});
 
-  cardElement
-    .querySelector(".button_delete")
-    .addEventListener("click", function (evt) {
-      evt.target.closest(".item").remove();
-    });
+  //cardElement
+    //.querySelector(".button_delete")
+    //.addEventListener("click", function (evt) {
+    //  evt.target.closest(".item").remove();
+    //});
 
-  cardElementPhoto
-    .addEventListener("click", function (evt) {
-      popupImagePreview.src = item.link;
-      popupImagePreview.alt = item.name;
-      popupImageTitle.textContent = item.name;
+  //cardElementPhoto
+    //.addEventListener("click", function (evt) {
+      //popupImagePreview.src = item.link;
+      //popupImagePreview.alt = item.name;
+      //popupImageTitle.textContent = item.name;
 
-      openPopup(popupZoomImage);
-    });
+      //openPopup(popupZoomImage);
+    //});
 
-  cardElement.querySelector(".item__title").textContent = item.name;
-  cardElementPhoto.src = item.link;
-  cardElementPhoto.alt = item.name;
+  //cardElement.querySelector(".item__title").textContent = item.name;
+  //cardElementPhoto.src = item.link;
+  //cardElementPhoto.alt = item.name;
 
-  return cardElement;
-}
+  //return cardElement;
+//}
 
-function addCard(card) {
-  const cardElement = createCard(card);
-  cardsContainer.prepend(cardElement);
-}
+//function addCard(card) {
+//  const cardElement = createCard(card);
+//  cardsContainer.prepend(cardElement);
+//}
 
 //Добавление начальных карточек из массива
-initialCards.forEach(function (item) {
-  addCard(item);
-});
+//initialCards.forEach(function (item) {
+//  addCard(item);
+//});
+
+function addCard(data) {
+  const card = new Card(data, ".card-template_type_default");
+  const cardElement = card.generateCard();
+
+  cardsContainer.prepend(cardElement);
+}
+ 
+
+//Добавление начальных карточек из массива
+initialCards.forEach((item) => {
+    addCard(item);
+})
 
 
 //Функция отключения кнопки Submit при добавлении карточки
@@ -156,9 +172,7 @@ function addFormSubmitHandler(evt) {
   addCard(card);
   formAddCardElement.reset();
   disableSubmitButton(submitButtonForAddCardPopup);
-  // popupSubmitButtonElement.classList.add("popup__submit_disabled");
-  //popupSubmitButtonElement.setAttribute("disabled", true);
-
+ 
   closePopup(popupAddNewCard);
 }
 
@@ -199,6 +213,3 @@ imageCloseButtonElement.addEventListener("click", function (evt) {
 formEditProfileElement.addEventListener("submit", editFormSubmitHandler);
 formAddCardElement.addEventListener("submit", addFormSubmitHandler);
 
-//popupAddButtonElement.addEventListener("click", function (evt) {
-//  disableSubmitButtonWhenOpened(popupAddNewCard);
-//})

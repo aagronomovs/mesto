@@ -39,6 +39,4 @@
 @import url(../blocks/popup/__figure/popup__figure.css);
 @import url(../blocks/popup/__image-preview/popup__image-preview.css);
 @import url(../blocks/popup/__image-title/popup__image-title.css);
-@import url(../scripts/initial-cards.js);
-@import url(../scripts/script.js);
-@import url(../scripts/validate.js);
+@import url(../scripts/index.js);
