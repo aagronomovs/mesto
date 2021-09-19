@@ -1,12 +1,10 @@
+import { handleCardClick } from "./index.js";
+
 export default class Card {
-    constructor(data, cardSelector, handleLikeButton, handleDeleteButton, handleCardClick) {
+    constructor(data, cardSelector) {
         this._name = data.name;
         this._link = data.link;
         this._cardSelector = cardSelector;
-
-        this._handleLikeButton = handleLikeButton;
-        this._handleDeleteButton = handleDeleteButton;
-        this._handleCardClick = handleCardClick;
     }
 
     //Создаем шаблон
@@ -20,47 +18,36 @@ export default class Card {
         return cardElement;
     }
 
-    //Устанавливаем слушатели
-    _setEventListeners() {
-        this._likeButton.addEventListener("click", this._handleLikeButton);
-
-        this._deleteButton.addEventListener("click", this._handleDeleteButton);
-
-    }
-
     //Лайки
-    _handleLikeButton() {
-        this._likeButton.classList.toggle("button_like_active");
+    _handleLikeButton(evt) {
+        evt.target.classList.toggle("button_like_active");
+        //this._element.querySelector(".button_like").classList.toggle("button_like_active");
+
     }
 
     //Удалить карточку
-    _handleDeleteButton() {
-        this._deleteButton.classList.remove();
-
+    _handleDeleteButton(evt) {
+        evt.target.closest(".item").remove();
+        //this._element.remove();
     }
 
-    //Клик по картинке ????
-    _handleCardClick() {
-        this._renderImgPopup({
-            link: this._link,
-            name: this._name,
-        });
-    }
 
+    //Устанавливаем слушатели
+    _setEventListeners() {
+        this._element.querySelector(".button_like").addEventListener("click", this._handleLikeButton);
+        this._element.querySelector(".button_delete").addEventListener("click", this._handleDeleteButton);
+        this._element.querySelector(".item__photo").addEventListener("click", handleCardClick);
+    }
 
     //Создаем карточку
     generateCard() {
         this._element = this._getTemplate();
 
-        this._likeButton = this._element.querySelector(".button_like");
-        this._deleteButton = this._element.querySelector(".button_delete");
-        this._setEventListeners();
-
-
         this._element.querySelector(".item__title").textContent = this._name;
         this._element.querySelector(".item__photo").src = this._link;
         this._element.querySelector(".item__photo").alt = this._name;
 
+        this._setEventListeners();
         return this._element;
     }
 }
