@@ -31,23 +31,23 @@ export default class Card {
         //this._element.remove();
     }
 
-
-    //Устанавливаем слушатели
-    _setEventListeners() {
-        this._element.querySelector(".button_like").addEventListener("click", this._handleLikeButton);
-        this._element.querySelector(".button_delete").addEventListener("click", this._handleDeleteButton);
-        this._element.querySelector(".item__photo").addEventListener("click", handleCardClick);
-    }
-
     //Создаем карточку
     generateCard() {
         this._element = this._getTemplate();
+        this._cardImage = this._element.querySelector(".item__photo");
 
         this._element.querySelector(".item__title").textContent = this._name;
-        this._element.querySelector(".item__photo").src = this._link;
-        this._element.querySelector(".item__photo").alt = this._name;
+        this._cardImage.src = this._link;
+        this._cardImage.alt = this._name;
 
         this._setEventListeners();
         return this._element;
+    }
+
+     //Устанавливаем слушатели
+     _setEventListeners() {
+        this._element.querySelector(".button_like").addEventListener("click", this._handleLikeButton);
+        this._element.querySelector(".button_delete").addEventListener("click", this._handleDeleteButton);
+        this._cardImage.addEventListener("click", handleCardClick);
     }
 }

@@ -4,7 +4,7 @@ import {
 import {
   dataForm
 } from "./constants.js";
-import Card from "./card.js";
+import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
 
 
@@ -95,9 +95,9 @@ popupImageContainer.addEventListener("click", (evt) => {
 
 
 //Функция закрытия попапов по Escape
-const closePopupByEscape = function (evt, popup) {
-  const popupOpened = document.querySelector(".popup_opened");
+const closePopupByEscape = function (evt) {
   if (evt.key === "Escape") {
+    const popupOpened = document.querySelector(".popup_opened");
     if (popupOpened) {
       closePopup(popupOpened);
     }
@@ -110,11 +110,14 @@ const closePopupByEscape = function (evt, popup) {
 //--------------------------------------------------------------------------------------
 const formValidatorCard = new FormValidator(dataForm, formElementCard);
 
+//Создание карточки
+function createCard(data) {
+  return (new Card(data, ".card-template_type_default", handleCardClick)).generateCard();
+} 
 
 //Добавление карточки
 function addCard(data) {
-  const card = new Card(data, ".card-template_type_default", handleCardClick);
-  const cardElement = card.generateCard();
+  const cardElement = createCard(data);
 
   cardsContainer.prepend(cardElement);
 }
@@ -143,14 +146,12 @@ function addFormSubmitHandler(evt) {
     link: cardLinkInput.value
   };
 
- // cardsContainer.prepend(addCard(newCard));
+  // cardsContainer.prepend(addCard(newCard));
   addCard(newCard);
 
   closePopup(popupAddNewCard);
   //formAddCardElement.reset();
   //formValidatorCard.clearValidation();
-  popupSubmitButtonAddCard.disabled = true;
-  popupSubmitButtonAddCard.classList.add('popup__submit_disabled');
 }
 
 
@@ -172,7 +173,6 @@ function editFormSubmitHandler(evt) {
   evt.preventDefault();
   titleProfile.textContent = nameInput.value;
   infoProfile.textContent = jobInput.value;
-  formEditProfileElement.reset();
 
   closePopup(popupEditProfile);
 }
