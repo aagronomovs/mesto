@@ -2,9 +2,10 @@
     background-color: #000000;
     min-width: 320px;
     width: 100%;
+    justify-content: center;
     font-family: 'Inter', 'Arial', sans-serif;
     color: #FFFFFF;
-    margin: 0 auto;
+    margin: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;

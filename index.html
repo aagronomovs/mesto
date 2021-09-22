@@ -9,8 +9,7 @@
   <link rel="stylesheet" href="./page/index.css">
 </head>
 
-<body>
-  <div class="root">
+<body class="root">
     <header class="header">
       <img class="logo" src="./image/logo.svg" alt="Логотип">
     </header>
@@ -19,10 +18,13 @@
       <section class="profile">
         <img class="profile__avatar" src="./image/kusto.jpg" alt="Аватар профиля">
         <div class="profile__info">
+          <div class="profile__info-wrap">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
           <button class="button button_edit" type="button"></button>
+        </div>
           <p class="profile__text">Исследователь океана</p>
         </div>
+        
         <button class="button button_add" type="button" aria-label="Add"></button>
       </section>
 
@@ -92,7 +94,7 @@
       </div>
     </div>
 
-  </div>
+  
   <script type="module" src="scripts/index.js"></script>
 
 </body>

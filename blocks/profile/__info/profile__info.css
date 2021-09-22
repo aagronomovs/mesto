@@ -1,9 +1,7 @@
 .profile__info {
     max-width: 282px;
-    margin: 22px auto 0;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    margin: 0 auto 0;
+      
 }
 
 @media screen and (min-width: 768px) {

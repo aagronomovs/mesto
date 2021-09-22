@@ -1,5 +1,6 @@
 .item {
     max-width: 282px;
+    width: 100%;
     margin: 0 auto 20px;
     display: flex;
     flex-direction: column;
