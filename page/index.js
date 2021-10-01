@@ -1,11 +1,13 @@
 import {
   initialCards
-} from "./initial-cards.js";
+} from "../utils/initial-cards.js";
 import {
-  dataForm
-} from "./constants.js";
-import Card from "./Card.js";
-import FormValidator from "./FormValidator.js";
+  dataForm,
+  listSelector
+} from "../utils/constants.js";
+import Card from "../components/Card.js";
+import FormValidator from "../components/FormValidator.js";
+import Section from "../components/Section.js";
 
 
 // Делаем выборку DOM элементов
@@ -113,19 +115,30 @@ const formValidatorCard = new FormValidator(dataForm, formElementCard);
 //Создание карточки
 function createCard(data) {
   return (new Card(data, ".card-template_type_default", handleCardClick)).generateCard();
-} 
-
-//Добавление карточки
-function addCard(data) {
-  const cardElement = createCard(data);
-
-  cardsContainer.prepend(cardElement);
 }
 
-//Добавление начальных карточек из массива
-initialCards.forEach((item) => {
-  addCard(item);
-})
+//Добавление карточки
+//function addCard(data) {
+  //const cardElement = createCard(data);
+
+  //cardsContainer.prepend(cardElement);
+//}
+
+//Добавление начальных карточек из массива (не работает почему-то)
+const defaultCardList = new Section({
+  items: initialCards,
+  renderer: (item) => {
+    const cardElement = createCard(item);
+    defaultCardList.addItem(cardElement)
+    
+}, cardsContainer});
+defaultCardList.renderItem();
+
+
+
+//initialCards.forEach((item) => {
+//  addCard(item);
+//})
 
 
 //Функция для просмотра попапа картинки
@@ -146,13 +159,11 @@ function addFormSubmitHandler(evt) {
     link: cardLinkInput.value
   };
 
-  // cardsContainer.prepend(addCard(newCard));
-  addCard(newCard);
+  //addCard(newCard);
+  addItem(newCard);
 
   closePopup(popupAddNewCard);
-  //formAddCardElement.reset();
-  //formValidatorCard.clearValidation();
-}
+  }
 
 
 //--------------------------------------------------------------------------------------
