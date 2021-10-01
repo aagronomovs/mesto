@@ -8,6 +8,7 @@ import {
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
 import Section from "../components/Section.js";
+import Popup from "../components/Popup.js";
 
 
 // Делаем выборку DOM элементов
@@ -62,49 +63,49 @@ const popupImageTitle = document.querySelector(".popup__image-title");
 const popupImageContainer = document.querySelector(".popup__big");
 
 // Функция открытия попапов
-function openPopup(popup) {
-  popup.classList.add("popup_opened");
-  document.addEventListener("keydown", closePopupByEscape);
-}
+//function openPopup(popup) {
+  //popup.classList.add("popup_opened");
+  //document.addEventListener("keydown", closePopupByEscape);
+//}
 
 // Функция закрытия попапов
-function closePopup(popup) {
-  popup.classList.remove("popup_opened");
-  document.removeEventListener("keydown", closePopupByEscape);
-}
+//function closePopup(popup) {
+ // popup.classList.remove("popup_opened");
+ // document.removeEventListener("keydown", closePopupByEscape);
+//}
 
 //Функция закрытия попапов по оверлей 
-function closePopupbyClickOnOverlay(evt) {
-  closePopup(evt.target.closest('.popup'));
-}
+//function closePopupbyClickOnOverlay(evt) {
+ // closePopup(evt.target.closest('.popup'));
+//}
 
 // Перебор всех попапов и навешивание слушателей
-allPopups.forEach((popup) => {
-  popup.addEventListener("click", closePopupbyClickOnOverlay);
-});
+//allPopups.forEach((popup) => {
+//  popup.addEventListener("click", closePopupbyClickOnOverlay);
+//});
 
 // Перебор всех контейнеров с попапами, чтобы не дать закрыть контейнер по клику внутри
-popupContainers.forEach((popupContainer) => {
-  popupContainer.addEventListener("click", (evt) => {
-    evt.stopPropagation();
-  });
-})
+//popupContainers.forEach((popupContainer) => {
+ // popupContainer.addEventListener("click", (evt) => {
+  //  evt.stopPropagation();
+  //});
+//})
 
 //Не даем закрыть контейнер с фото по клику внутри
-popupImageContainer.addEventListener("click", (evt) => {
-  evt.stopPropagation();
-});
+//popupImageContainer.addEventListener("click", (evt) => {
+//  evt.stopPropagation();
+//});
 
 
 //Функция закрытия попапов по Escape
-const closePopupByEscape = function (evt) {
-  if (evt.key === "Escape") {
-    const popupOpened = document.querySelector(".popup_opened");
-    if (popupOpened) {
-      closePopup(popupOpened);
-    }
-  }
-}
+//const closePopupByEscape = function (evt) {
+ // if (evt.key === "Escape") {
+  //  const popupOpened = document.querySelector(".popup_opened");
+  //  if (popupOpened) {
+   //   closePopup(popupOpened);
+  //  }
+ // }
+//}
 
 
 //--------------------------------------------------------------------------------------
