@@ -1,10 +1,9 @@
-import { handleCardClick } from "../page/index.js";
-
 export default class Card {
-    constructor(data, cardSelector) {
+    constructor(data, cardSelector, handleCardClick) {
         this._name = data.name;
         this._link = data.link;
         this._cardSelector = cardSelector;
+        this._handleCardClick = handleCardClick;
     }
 
     //Создаем шаблон
@@ -21,14 +20,14 @@ export default class Card {
     //Лайки
     _handleLikeButton(evt) {
         evt.target.classList.toggle("button_like_active");
-        //this._element.querySelector(".button_like").classList.toggle("button_like_active");
+        
 
     }
 
     //Удалить карточку
     _handleDeleteButton(evt) {
         evt.target.closest(".item").remove();
-        //this._element.remove();
+        
     }
 
     //Создаем карточку
@@ -48,6 +47,8 @@ export default class Card {
      _setEventListeners() {
         this._element.querySelector(".button_like").addEventListener("click", this._handleLikeButton);
         this._element.querySelector(".button_delete").addEventListener("click", this._handleDeleteButton);
-        this._cardImage.addEventListener("click", handleCardClick);
+        this._cardImage.addEventListener("click", () => {
+            this._handleCardClick(this._name, this._link)
+        } );
     }
 }
