@@ -9,6 +9,7 @@ import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
 import Section from "../components/Section.js";
 import Popup from "../components/Popup.js";
+import PopupWithImage from "../components/PopupWithImage.js";
 
 
 // Делаем выборку DOM элементов
@@ -57,9 +58,9 @@ const popupSubmitButtonAddCard = document.querySelector(".popup__submit_add-card
 //const submitButtonForEditProfilePopup = popupEditButtonElement.querySelector(".popup__submit");
 
 const popupZoomImage = document.querySelector(".popup_zoom-image");
-const popupImagePreview = document.querySelector(".popup__image-preview");
+//const popupImagePreview = document.querySelector(".popup__image-preview");
 const imageCloseButtonElement = document.querySelector(".popup__close_image");
-const popupImageTitle = document.querySelector(".popup__image-title");
+//const popupImageTitle = document.querySelector(".popup__image-title");
 const popupImageContainer = document.querySelector(".popup__big");
 
 // Функция открытия попапов
