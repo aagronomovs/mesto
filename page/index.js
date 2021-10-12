@@ -6,6 +6,8 @@ import {
   popupEditButtonElement,
   popupEditProfile,
   formElementProfile,
+  formEditProfileElement,
+  formAddCardElement,
   nameInput,
   jobInput,
   titleProfile,
