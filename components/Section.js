@@ -3,17 +3,17 @@ export default class Section {
         items,
         renderer
     }, containerSelector) {
-        this._renderedItems = items;
+        this._items = items;
         this._renderer = renderer;
-        this._container = document.querySelector(containerSelector);
+        this._container = containerSelector;
     }
 
     addItem(element) {
         this._container.prepend(element);
     }
 
-    renderItem() {
-        this._renderedItems.forEach((item) => {
+    renderItems() {
+        this._items.forEach((item) => {
             this._renderer(item);
         });
     }
