@@ -20,14 +20,14 @@ export default class Card {
     //Лайки
     _handleLikeButton(evt) {
         evt.target.classList.toggle("button_like_active");
-        
+
 
     }
 
     //Удалить карточку
     _handleDeleteButton(evt) {
         evt.target.closest(".item").remove();
-        
+
     }
 
     //Создаем карточку
@@ -43,12 +43,12 @@ export default class Card {
         return this._element;
     }
 
-     //Устанавливаем слушатели
-     _setEventListeners() {
+    //Устанавливаем слушатели
+    _setEventListeners() {
         this._element.querySelector(".button_like").addEventListener("click", this._handleLikeButton);
         this._element.querySelector(".button_delete").addEventListener("click", this._handleDeleteButton);
         this._cardImage.addEventListener("click", () => {
             this._handleCardClick(this._name, this._link)
-        } );
+        });
     }
 }

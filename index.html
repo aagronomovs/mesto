@@ -10,91 +10,91 @@
 </head>
 
 <body class="root">
-    <header class="header">
-      <img class="logo" src="./image/logo.svg" alt="Логотип">
-    </header>
+  <header class="header">
+    <img class="logo" src="./image/logo.svg" alt="Логотип">
+  </header>
 
-    <main class="content">
-      <section class="profile">
-        <img class="profile__avatar" src="./image/kusto.jpg" alt="Аватар профиля">
-        <div class="profile__info">
-          <div class="profile__info-wrap">
+  <main class="content">
+    <section class="profile">
+      <img class="profile__avatar" src="./image/kusto.jpg" alt="Аватар профиля">
+      <div class="profile__info">
+        <div class="profile__info-wrap">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
           <button class="button button_edit" type="button"></button>
         </div>
-          <p class="profile__text">Исследователь океана</p>
-        </div>
-        
-        <button class="button button_add" type="button" aria-label="Add"></button>
-      </section>
-
-      <section class="cards">
-
-      </section>
-
-
-
-    </main>
-    <footer class="footer">
-      <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
-    </footer>
-
-    <template id="template" class="card-template card-template_type_default">
-      <article class="item">
-        <img class="item__photo" alt="">
-        <button class="button button_delete" type="button"></button>
-        <div class="item__wrapper">
-          <h2 class="item__title"></h2>
-          <button class="button button_like" type="button"></button>
-        </div>
-      </article>
-    </template>
-
-    <div class="popup popup_edit-profile">
-      <div class="popup__container">
-        <button class="popup__close popup__close_profile" type="button"></button>
-        <form name="userform" class="popup__form popup__form_edit-profile" novalidate>
-          <h2 class="popup__title">Редактировать профиль</h2>
-          <input id="userform-name-input" type="text" class="popup__input popup__input_field_name" name="title"
-            minlength="2" maxlength="40" required placeholder="Имя" value>
-          <span id="userform-name-input-error" class="popup__error"></span>
-          <input id="userform-job-input" type="text" class="popup__input popup__input_field_job" name="info"
-            placeholder="О себе" minlength="2" maxlength="200" required value>
-          <span id="userform-job-input-error" class="popup__error"></span>
-          <button type="submit" class="button popup__submit popup__submit_disabled" name="submit"
-            value="Сохранить">Сохранить</button>
-        </form>
+        <p class="profile__text">Исследователь океана</p>
       </div>
-    </div>
 
-    <div class="popup popup_add-card">
-      <div class="popup__container">
-        <button class="popup__close popup__close_card" type="button"></button>
-        <form name="card" class="popup__form  popup__form_add-card" novalidate>
-          <h2 class="popup__title">Новое место</h2>
-          <input id="card-name-input" type="text" class="popup__input popup__input_field_card-name" name="card-name"
-            placeholder="Название" minlength="2" maxlength="30" required value>
-          <span id="card-name-input-error" class="popup__error"></span>
-          <input id="card-link-input" type="url" class="popup__input popup__input_field_link" name="link"
-            placeholder="Ссылка на картинку" required value>
-          <span id="card-link-input-error" class="popup__error"></span>
-          <button type="submit" class="button popup__submit popup__submit_add-card popup__submit_disabled" name="submit"
-            value="Создать">Создать</button>
-        </form>
+      <button class="button button_add" type="button" aria-label="Add"></button>
+    </section>
+
+    <section class="cards">
+
+    </section>
+
+
+
+  </main>
+  <footer class="footer">
+    <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+  </footer>
+
+  <template id="template" class="card-template card-template_type_default">
+    <article class="item">
+      <img class="item__photo" alt="">
+      <button class="button button_delete" type="button"></button>
+      <div class="item__wrapper">
+        <h2 class="item__title"></h2>
+        <button class="button button_like" type="button"></button>
       </div>
-    </div>
+    </article>
+  </template>
 
-    <div class="popup popup_zoom-image">
-      <div class="popup__big">
-        <button class="popup__close popup__close_image" type="button"></button>
-        <figure class="popup__figure">
-          <img class="popup__image-preview" alt=""> 
-          <figcaption class="popup__image-title"></figcaption>
-        </figure>
-      </div>
+  <div class="popup popup_edit-profile">
+    <div class="popup__container">
+      <button class="popup__close popup__close_profile" type="button"></button>
+      <form name="userform" class="popup__form popup__form_edit-profile" novalidate>
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <input id="userform-name-input" type="text" class="popup__input popup__input_field_name" name="title"
+          minlength="2" maxlength="40" required placeholder="Имя" value>
+        <span id="userform-name-input-error" class="popup__error"></span>
+        <input id="userform-job-input" type="text" class="popup__input popup__input_field_job" name="info"
+          placeholder="О себе" minlength="2" maxlength="200" required value>
+        <span id="userform-job-input-error" class="popup__error"></span>
+        <button type="submit" class="button popup__submit popup__submit_disabled" name="submit"
+          value="Сохранить">Сохранить</button>
+      </form>
     </div>
+  </div>
 
-  
+  <div class="popup popup_add-card">
+    <div class="popup__container">
+      <button class="popup__close popup__close_card" type="button"></button>
+      <form name="card" class="popup__form  popup__form_add-card" novalidate>
+        <h2 class="popup__title">Новое место</h2>
+        <input id="card-name-input" type="text" class="popup__input popup__input_field_card-name" name="card-name"
+          placeholder="Название" minlength="2" maxlength="30" required value>
+        <span id="card-name-input-error" class="popup__error"></span>
+        <input id="card-link-input" type="url" class="popup__input popup__input_field_link" name="link"
+          placeholder="Ссылка на картинку" required value>
+        <span id="card-link-input-error" class="popup__error"></span>
+        <button type="submit" class="button popup__submit popup__submit_add-card popup__submit_disabled" name="submit"
+          value="Создать">Создать</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="popup popup_zoom-image">
+    <div class="popup__big">
+      <button class="popup__close popup__close_image" type="button"></button>
+      <figure class="popup__figure">
+        <img class="popup__image-preview" alt="">
+        <figcaption class="popup__image-title"></figcaption>
+      </figure>
+    </div>
+  </div>
+
+
   <script type="module" src="page/index.js"></script>
 
 </body>
