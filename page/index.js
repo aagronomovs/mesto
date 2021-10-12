@@ -152,7 +152,7 @@ const formValidatorCard = new FormValidator(dataForm, formElementCard);
 //попап превью картинки
 const imagePopup = new PopupWithImage(popupZoomImage);
 
-function handleCardClick(link, name) {
+function handleCardClick(name, link) {
 
   // const link = evt.target.getAttribute("src");
   //const title = evt.target.getAttribute("alt");
@@ -160,7 +160,7 @@ function handleCardClick(link, name) {
   //popupImagePreview.alt = title;
   //popupImageTitle.textContent = title;
 
-  imagePopup.open(link, name);
+  imagePopup.open(name, link);
 }
 
 const cardList = new Section({
@@ -180,9 +180,9 @@ function renderCard(item) {
   cardsContainer.prepend(newCard);
 }
 
-const addCardPopup = new PopupWithForm({ 
-  popupSelector: popupAddNewCard, 
-  handleFormSubmit: (data) => {
+const addCardPopup = new PopupWithForm(
+  popupAddNewCard , 
+   (data) => {
     const cardObj = {}
     cardObj.name = data.cardName;
     cardObj.link = data.cardLink;
@@ -192,8 +192,8 @@ const addCardPopup = new PopupWithForm({
     });
     cardList.addItem(cardElement);
     addCardPopup.close();
-  }
-});
+  });
+
 
 
 
@@ -228,13 +228,12 @@ function setProfilePopup() {
   jobInput.value = user.info;
 }
 
-const profilePopup = new PopupWithForm({
-  popupSelector: popupEditProfile,
-  handleFormSubmit: (data) => {
+const profilePopup = new PopupWithForm(  popupEditProfile,
+   (data) => {
     userInfo.setUserInfo(data);
     profilePopup.close()
   }
-});
+);
 
 
 
