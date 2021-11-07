@@ -3,7 +3,7 @@
     width: 100%;
     margin: 42px auto 0;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
 }
