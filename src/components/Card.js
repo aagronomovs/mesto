@@ -20,21 +20,17 @@ export default class Card {
     //Лайки
     _handleLikeButton(evt) {
         evt.target.classList.toggle("button_like_active");
-
-
     }
 
     //Удалить карточку
     _handleDeleteButton(evt) {
         evt.target.closest(".item").remove();
-
     }
 
     //Создаем карточку
     generateCard() {
         this._element = this._getTemplate();
         this._cardImage = this._element.querySelector(".item__photo");
-
         this._element.querySelector(".item__title").textContent = this._name;
         this._cardImage.src = this._link;
         this._cardImage.alt = this._name;
