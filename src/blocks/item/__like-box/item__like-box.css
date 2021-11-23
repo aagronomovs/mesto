@@ -1,6 +1,4 @@
 .item__like-box {
-    height: 35px;
-    width: 22px;
     display: flex;
     flex-direction: column;
 }

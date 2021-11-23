@@ -21,7 +21,7 @@ import {
   formElementCard,
   popupZoomImage
 } from "../utils/constants.js";
-import Api from "../components/Api.js";
+//import Api from "../components/Api.js";
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
 import Section from "../components/Section.js";
@@ -29,13 +29,13 @@ import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
 
-const api = new Api( {
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-30',
-  headers: {
-    authorization: '35a287b1-80fa-4f60-8717-4407e47f6cbb',
-    'Content-Type': 'application/json',
-  },
-}); 
+//const api = new Api( {
+//  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-30',
+//  headers: {
+//    authorization: '35a287b1-80fa-4f60-8717-4407e47f6cbb',
+//    'Content-Type': 'application/json',
+//  },
+//}); 
 
 //--------------------------------------------------------------------------------------
 // Форма добавления карточки

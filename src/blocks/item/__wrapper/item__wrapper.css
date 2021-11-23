@@ -1,6 +1,7 @@
 .item__wrapper {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    max-width: 246px;
+    /*max-width: 246px; */
+    margin: 0;
 }
