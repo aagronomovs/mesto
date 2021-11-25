@@ -19,7 +19,10 @@ import {
   cardLinkInput,
   popupAddNewCard,
   formElementCard,
-  popupZoomImage
+  popupZoomImage,
+  popupUpdateAvatar,
+  buttonSubmit,
+  profileAvatarEditElement
 } from "../utils/constants.js";
 import Api from "../components/Api.js";
 import Card from "../components/Card.js";
@@ -37,6 +40,35 @@ const api = new Api({
     'Content-Type': 'application/json',
   },
 });
+
+//------------------------------------------------------------------------------------
+// Форма изменения аватара пользователя
+//------------------------------------------------------------------------------------
+
+const popupAvatar = new PopupWithForm(popupUpdateAvatar, 
+  (data) => {
+    const avatar = {};
+avatar.link = data.avatarUrl;
+api.updateAvatar(avatar.link)
+.then((res) => {
+  userInfo.setUserInfo(res);
+  popupAvatar.close();
+})
+.catch((err) => {
+  console.log(err);
+})
+.finally(() => {
+buttonSubmit.textContent = "Сохранить";
+}) 
+  });
+
+  
+// Дописать функцию!!!
+  profileAvatarEditElement.addEventListener("click", function(evt) {
+    evt.preventDefault()
+  })
+
+
 
 //--------------------------------------------------------------------------------------
 // Форма добавления карточки
@@ -128,3 +160,4 @@ formValidatorProfile.enableValidation();
 imagePopup.setEventListeners();
 profilePopup.setEventListeners();
 addCardPopup.setEventListeners();
+popupAvatar.setEventListeners();

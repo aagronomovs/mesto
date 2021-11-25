@@ -34,3 +34,6 @@ export const cardLinkInput = formAddCardElement.querySelector(
 export const popupAddNewCard = document.querySelector(".popup_add-card");
 export const formElementCard = document.forms.card;
 export const popupZoomImage = document.querySelector(".popup_zoom-image");
+export const popupUpdateAvatar = document.querySelector(".popup_avatar");
+export const buttonSubmit = document.querySelector(".popup__submit");
+export const profileAvatarEditElement = document.querySelector(".profile__avatar-container"); 
