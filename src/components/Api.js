@@ -35,9 +35,8 @@ export default class Api {
                 method: 'PATCH',
                 headers: this._headers,
                 body: JSON.stringify({
-                    name: name,
-                    about: about,
-                }),
+                    name,
+                    about }),
             })
             .then(this._getResponse);
     }
@@ -48,7 +47,7 @@ export default class Api {
                 headers: this._headers,
                 body: JSON.stringify({
                     name: name,
-                    link: link,
+                    link: link
                 }),
             })
             .then(this._getResponse);
@@ -67,13 +66,13 @@ export default class Api {
                 method: 'PATCH',
                 headers: this._headers,
                 body: JSON.stringify({
-                    avatar: avatar,
+                    avatar
                 }),
             })
             .then(this._getResponse);
     }
 
-    getLikes(cardId) {
+    getLike(cardId) {
         return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
                 method: 'PUT',
                 headers: this._headers,

@@ -12,6 +12,6 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    min-width: 219px;
+    max-width: 219px;
     text-align: left;
 }

@@ -21,10 +21,10 @@
       </div>
       <div class="profile__info">
         <div class="profile__info-wrap">
-          <h1 class="profile__title">Жак-Ив Кусто</h1>
+          <h1 class="profile__title"></h1>
           <button class="button button_edit" type="button"></button>
         </div>
-        <p class="profile__text">Исследователь океана</p>
+        <p class="profile__text"></p>
       </div>
 
       <button class="button button_add" type="button" aria-label="Add"></button>
@@ -49,7 +49,7 @@
         <h2 class="item__title"></h2>
         <div class="item__like-box">
           <button class="button button_like" type="button"></button>
-          <p class="item__like-counter">2</p>
+          <p class="item__like-counter"></p>
         </div>
       </div>
     </article>
@@ -60,13 +60,13 @@
       <button class="popup__close popup__close_profile" type="button"></button>
       <form name="userform" class="popup__form popup__form_edit-profile" novalidate>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <input id="userform-name-input" type="text" class="popup__input popup__input_field_name" name="title"
+        <input id="userform-name-input" type="text" class="popup__input popup__input_field_name" name="name"
           minlength="2" maxlength="40" required placeholder="Имя" value>
         <span id="userform-name-input-error" class="popup__error"></span>
-        <input id="userform-job-input" type="text" class="popup__input popup__input_field_job" name="info"
+        <input id="userform-job-input" type="text" class="popup__input popup__input_field_job" name="about"
           placeholder="О себе" minlength="2" maxlength="200" required value>
         <span id="userform-job-input-error" class="popup__error"></span>
-        <button type="submit" class="button popup__submit popup__submit_disabled" name="submit"
+        <button type="submit" class="button popup__submit popup__submit_profile popup__submit_disabled" name="submit"
           value="Сохранить">Сохранить</button>
       </form>
     </div>
@@ -77,10 +77,10 @@
       <button class="popup__close popup__close_card" type="button"></button>
       <form name="card" class="popup__form  popup__form_add-card" novalidate>
         <h2 class="popup__title">Новое место</h2>
-        <input id="card-name-input" type="text" class="popup__input popup__input_field_card-name" name="card-name"
+        <input id="card-name-input" type="text" class="popup__input popup__input_field_card-name" name="cardName"
           placeholder="Название" minlength="2" maxlength="30" required value>
         <span id="card-name-input-error" class="popup__error"></span>
-        <input id="card-link-input" type="url" class="popup__input popup__input_field_link" name="link"
+        <input id="card-link-input" type="url" class="popup__input popup__input_field_link" name="cardLink"
           placeholder="Ссылка на картинку" required value>
         <span id="card-link-input-error" class="popup__error"></span>
         <button type="submit" class="button popup__submit popup__submit_add-card popup__submit_disabled" name="submit"
@@ -114,10 +114,10 @@
       <button class="popup__close popup__close_avatar" type="button"></button>
       <form name="avatar" class="popup__form popup__form_avatar" novalidate>
         <h2 class="popup__title">Обновить аватар</h2>
-        <input id="avatar-link-input" type="url" class="popup__input popup__input_field_link" name="avatarUrl"
+        <input id="avatar-link-input" type="url" class="popup__input popup__input_field_link" name="link"
           placeholder="Ссылка" required value>
         <span id="avatar-link-input-error" class="popup__error"></span>
-        <button type="submit" class="button popup__submit popup__submit_disabled" name="submit"
+        <button type="submit" class="button popup__submit popup__submit_avatar popup__submit_disabled" name="submit"
           value="Сохранить">Сохранить</button>
       </form>
     </div>
