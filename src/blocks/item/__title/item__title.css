@@ -6,12 +6,10 @@
     color: #000000;
     background-color: white;
     border-radius: 0 0 10px 10px;
-    padding-top: 25px;
-    padding-bottom: 31px;
-    margin: 0 auto;
+    margin: 0;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    max-width: 219px;
+   /* max-width: 219px;*/
     text-align: left;
 }
