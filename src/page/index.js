@@ -163,11 +163,7 @@ const addCardPopup = new PopupWithForm(
         .finally(() => {
           buttonAddCardSubmit.textContent = "Создать";
         })
-      //const cardElement = createCard({
-      //  name: cardNameInput.value,
-      //  link: cardLinkInput.value
-      //});
-      //cardList.addItem(cardElement);
+      
       addCardPopup.close();
     }
   });

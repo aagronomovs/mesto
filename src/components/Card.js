@@ -9,6 +9,7 @@ export default class Card {
         this._name = data.name;
         this._link = data.link;
         this._likes = data.likes;
+        this._likeCounter = data.likes.length;
         this._currentUserId = data.currentUserId;
         this._id = data._id;
         this._userId = data.owner._id;
@@ -36,10 +37,8 @@ export default class Card {
         this._cardImage = this._element.querySelector(".item__photo");
         this._cardLike = this._element.querySelector(".button_like");
         this._updateLikes();
-        this._likeCounter = this._element.querySelector(".item__like-counter");
-        //this.showLikeCounter();
+        this._element.querySelector(".item__like-counter").textContent = this._likeCounter;
         this._deleteButton = this._element.querySelector(".button_delete");
-
         this._element.querySelector(".item__title").textContent = this._name;
         this._cardImage.src = this._link;
         this._cardImage.alt = this._name;
@@ -80,6 +79,7 @@ export default class Card {
     //Постановка лайков
     setLikes(dataLikes) {
         this._likes = dataLikes;
+        this._element.querySelector(".item__like-counter").textContent = this._likeCounter;
         this._updateLikes();
     }
 
@@ -95,10 +95,4 @@ export default class Card {
     // handleLikeButton(evt) {
     //    evt.target.classList.toggle("button_like_active");
     //}
-
-
-    // Показываем счетчик лайков
-    // showLikeCounter(arr) {
-    //    this._likeCounter.textContent = arr.length;
-    // }
 }
