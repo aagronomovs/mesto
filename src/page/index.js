@@ -70,10 +70,6 @@ const formValidatorCard = new FormValidator(dataForm, formElementCard);
 //попап превью картинки
 const imagePopup = new PopupWithImage(popupZoomImage);
 
-//function handleCardClick(name, link) {
-// imagePopup.open(name, link);
-//}
-
 //попап удаления карточки
 const deletePopup = new PopupWithConfirmation(popupConfirmation);
 deletePopup.setEventListeners();
