@@ -112,13 +112,13 @@ function createCard(data) {
         deletePopup.open();
         deletePopup.setActionSubmit(() => {
           api
-              .deleteCard(card._id)
-              .then(() => {
-                card.deleteCard();
-                deletePopup.close();
-              })
+            .deleteCard(card._id)
+            .then(() => {
+              card.deleteCard();
+              deletePopup.close();
+            })
         })
-        
+
       },
     },
     ".card-template_type_default");
@@ -163,7 +163,7 @@ const addCardPopup = new PopupWithForm(
         .finally(() => {
           buttonAddCardSubmit.textContent = "Создать";
         })
-      
+
       addCardPopup.close();
     }
   });
