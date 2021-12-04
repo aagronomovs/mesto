@@ -12,4 +12,6 @@
     overflow: hidden;
     /* max-width: 219px;*/
     text-align: left;
+    align-items: baseline;
+    max-width: 190px;
 }

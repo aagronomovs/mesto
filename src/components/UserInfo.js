@@ -1,5 +1,6 @@
 export default class UserInfo {
-    constructor( {titleProfile,
+    constructor({
+        titleProfile,
         infoProfile,
         avatarProfile
     }) {
@@ -16,9 +17,13 @@ export default class UserInfo {
     }
 
     setUserInfo(data) {
-        this.titleProfile.textContent = data.name;
-        this.infoProfile.textContent = data.about;
-        this.avatarProfile.src = data.avatar;
+        if ({ data }) {
+            this.titleProfile.textContent = data.name;
+            this.infoProfile.textContent = data.about;
+            this.avatarProfile.src = data.avatar;
+        } else {
+            console.log('Что-то пошло не так...')
+        }
     }
 
 }

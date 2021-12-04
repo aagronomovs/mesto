@@ -3,7 +3,6 @@ export default class Card {
         data,
         handleCardClick,
         handleLikeClick,
-        handleDeleteLike,
         handleDeleteCard
     }, cardSelector) {
         this._name = data.name;
@@ -16,7 +15,6 @@ export default class Card {
         this._cardSelector = cardSelector;
         this._handleCardClick = handleCardClick;
         this._handleLikeClick = handleLikeClick;
-        this._handleDeleteLike = handleDeleteLike;
         this._handleDeleteCard = handleDeleteCard;
     }
 
@@ -36,16 +34,17 @@ export default class Card {
         this._element = this._getTemplate();
         this._cardImage = this._element.querySelector(".item__photo");
         this._cardLike = this._element.querySelector(".button_like");
-        this._updateLikes();
+        
         this._element.querySelector(".item__like-counter").textContent = this._likeCounter;
         this._deleteButton = this._element.querySelector(".button_delete");
         this._element.querySelector(".item__title").textContent = this._name;
         this._cardImage.src = this._link;
         this._cardImage.alt = this._name;
         //this._likeCounter.textContent = this._likes.length;
-
+        //this.isLiked();
+        this._updateLikes();
         this._setEventListeners();
-
+       
 
         return this._element;
     }
@@ -53,6 +52,7 @@ export default class Card {
     //Удалить карточку
     deleteCard = () => {
         this._element.remove();
+        this._element = null;
     }
 
     //Убрать кнопку delete с чужих карточек
@@ -73,12 +73,13 @@ export default class Card {
     }
 
     isLiked() {
-        return this._likes.some(user => user._id === this.currentUserId)
+        return this._likes.some(user => user._id === this._currentUserId)
     }
 
     //Постановка лайков
-    setLikes(dataLikes) {
-        this._likes = dataLikes;
+    setLikes(data) {
+        this._likes = data;
+        this._likeCounter = this._likes.length;
         this._element.querySelector(".item__like-counter").textContent = this._likeCounter;
         this._updateLikes();
     }

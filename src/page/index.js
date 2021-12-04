@@ -79,7 +79,7 @@ const cardList = new Section({
     // items: initialCards,
     renderer: (items) => {
       const element = createCard(items);
-      cardList.addItem(element)
+      cardList.addItem(element, "append")
     }
   },
   cardsContainer);
@@ -99,9 +99,15 @@ function createCard(data) {
         if (card.isLiked()) {
           api.removeLike(card._id)
             .then(dataCards => card.setLikes(dataCards.likes))
+            .catch((err) => {
+              console.log(err);
+            })
         } else {
           api.getLike(card._id)
             .then(dataCards => card.setLikes(dataCards.likes))
+            .catch((err) => {
+              console.log(err);
+            })
         }
       },
       handleDeleteCard: (card) => {
@@ -112,6 +118,9 @@ function createCard(data) {
             .then(() => {
               card.deleteCard();
               deletePopup.close();
+            })
+            .catch((err) => {
+              console.log(err);
             })
         })
 
@@ -150,7 +159,7 @@ const addCardPopup = new PopupWithForm(
         .postNewCard(cardObj.name, cardObj.link)
         .then((res) => {
           const card = createCard(res);
-          cardList.addItem(card);
+          cardList.addItem(card, "prepend");
           addCardPopup.close();
         })
         .catch((err) => {
